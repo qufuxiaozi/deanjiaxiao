@@ -11,16 +11,29 @@ export interface Store {
   status: 'open' | 'base' | 'planned';
   rent?: number;
   phone?: string;
+  coaches?: {
+    name: string;
+    avatar: string;
+    rating: number;
+    school: string;
+  }[];
+  pricing?: {
+    type: string;
+    price: string;
+    description?: string;
+  }[];
+  medicalCheckupTime?: string;
+  studentCount?: number;
 }
 
 export const stores: Store[] = [
   { id: 0, name: '徐汇龙华训练基地', address: '上海市徐汇区龙华路2577号 (近内环高架)', lnglat: [121.455, 31.175], status: 'base' },
-  { id: 1, name: '德安驾校·懂车鹿学车(安亭校区)', address: '崇信路1521弄2楼10室', lnglat: [121.240419, 31.345205], status: 'open' },
+  { id: 1, name: '德安驾校·懂车鹿学车(安亭校校区)', address: '崇信路1521弄2楼10室', lnglat: [121.240419, 31.345205], status: 'open' },
   { id: 2, name: '德安驾校懂车鹿学车(马陆校区)', address: '马陆镇宝安公路3636弄1号218室', lnglat: [121.271381, 31.327695], status: 'open' },
   { id: 3, name: '德安驾校·懂车鹿学车(莘庄校区)', address: '莘北路505号东阔颐园文创智工坊B栋5层C26室', lnglat: [121.364398, 31.110529], status: 'open' },
   { id: 4, name: '龙泉驾校·先学后付·懂车鹿(联群路总部)', address: '联群路88号龙泉驾校报名大厅', lnglat: [121.240256, 31.267768], status: 'open' },
   { id: 5, name: '德安驾校·懂车鹿学车(梅陇校区)', address: '虹梅南路3155弄51号虹柏产业园招商楼2楼办公室3', lnglat: [121.436597, 31.087988], status: 'open' },
-  { id: 6, name: '德安驾校·懂车鹿学车(日月光校校区区域)', address: '沪太路1717号山海大厦2楼282室', lnglat: [121.421211, 31.286011], status: 'open' },
+  { id: 6, name: '德安驾校·懂车鹿学学车(日月光校区区域)', address: '沪太路1717号山海大厦2楼282室', lnglat: [121.421211, 31.286011], status: 'open' },
   { id: 7, name: '懂车鹿学车(青浦总店)', address: '康园路水都南岸27号楼1楼101号', lnglat: [121.05531, 31.086941], status: 'open' },
   { id: 8, name: '德安驾校·懂车鹿学车(南翔校区)', address: '银翔路609号301室', lnglat: [121.323355, 31.290638], status: 'open' },
   { id: 9, name: '德安驾校·懂车鹿学车(光明校区)', address: '新场镇沪南公路7360号', lnglat: [121.64723, 31.028698], status: 'open' },
@@ -29,7 +42,22 @@ export const stores: Store[] = [
   { id: 12, name: '德安驾校·懂车鹿学车(刘行校区)', address: '顾村镇友谊西路588号2号门108', lnglat: [121.417076, 31.379519], status: 'open' },
   { id: 13, name: '德安驾校·懂车鹿学车(曹路校区)', address: '曹路镇川沙路688号', lnglat: [121.669749, 31.273241], status: 'open' },
   { id: 14, name: '德安驾校·懂车鹿学车(虹桥校区)', address: '诸光路1588弄578号虹桥世界中心D1幢3层301室', lnglat: [121.306589, 31.185218], status: 'open' },
-  { id: 15, name: '德安驾校·懂车鹿学车(华茂校区)', address: '顾陈路388号3号门16室', lnglat: [121.388951, 31.336557], status: 'open' },
+  { 
+    id: 15, 
+    name: '德安驾校·懂车鹿学车(华茂校区)', 
+    address: '顾陈路388号3号门16室', 
+    lnglat: [121.388951, 31.336557], 
+    status: 'open',
+    medicalCheckupTime: '周二、四、六',
+    studentCount: 25,
+    pricing: [
+      { type: 'C1两人一车特惠班', price: '¥3,280' },
+      { type: 'C2一人一车特惠班', price: '¥3,580' },
+      { type: 'VIP五次不过全额退班', price: '¥4,980' },
+      { type: 'D照', price: '¥299' },
+      { type: '全包 (含2圈模拟)', price: '¥899' }
+    ]
+  },
   { id: 16, name: '懂车鹿学车·安技驾校官方基地店', address: '南芦公路158号1号门1栋101室', lnglat: [121.714705, 31.032416], status: 'open' },
   { id: 17, name: '德安驾校·懂车鹿学车(吴泾校区)', address: '沧源路1200号', lnglat: [121.423841, 31.023878], status: 'open' },
   { id: 59, name: '待租赁地址·新赵路', address: '新赵路59号', lnglat: [121.086344, 31.256218], status: 'planned', rent: 1900 },
@@ -49,7 +77,17 @@ export const stores: Store[] = [
   { id: 73, name: '待租赁地址·虹梅路1023号', address: '虹梅路1023号', lnglat: [121.404526, 31.156462], status: 'planned', phone: '13052171009' },
   { id: 74, name: '待租赁地址·龙吴路', address: '龙吴路5694号', lnglat: [121.469086, 31.039047], status: 'planned', rent: 2000, phone: '18817561150' },
   { id: 75, name: '待租赁地址·永跃路', address: '永跃路360号', lnglat: [121.511663, 31.027547], status: 'planned', rent: 1700, phone: '19271559708' },
-  { id: 18, name: '汪汪学车团队', address: '齐爱路300号', lnglat: [121.655987, 31.212058], status: 'base' },
+  { 
+    id: 18, 
+    name: '汪汪学车团队', 
+    address: '齐爱路300号', 
+    lnglat: [121.655987, 31.212058], 
+    status: 'base', 
+    coaches: [
+      { name: '谢宗琴', avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop', rating: 4.9, school: '汪汪学车团队' },
+      { name: '付秀丽', avatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop', rating: 4.8, school: '汪汪学车团队' }
+    ] 
+  },
   { id: 19, name: '银都驾校报名处·车掌门学车', address: '申港路298号', lnglat: [121.351107, 31.070459], status: 'base' },
   { id: 20, name: '安亭基地学车报名处', address: '伊宁路2000号', lnglat: [121.223521, 31.340101], status: 'base' },
   { id: 21, name: '春申基地', address: '淀南路69号', lnglat: [121.353485, 31.113869], status: 'base' },

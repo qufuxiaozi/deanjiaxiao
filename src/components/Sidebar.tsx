@@ -64,8 +64,8 @@ export default function Sidebar({ onSearch, onClear }: SidebarProps) {
             <label className="text-xs font-semibold text-gray-400 uppercase tracking-wider">交通路线</label>
             <div className="grid grid-cols-2 gap-2">
               {[
-                { icon: Bus, label: '公交地铁' },
-                { icon: Bike, label: '骑行', active: true },
+                { icon: Bus, label: '公交地铁', active: true },
+                { icon: Bike, label: '骑行' },
                 { icon: Car, label: '自驾' },
                 { icon: CarFront, label: '打车' }
               ].map((item, idx) => (
