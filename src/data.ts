@@ -51,11 +51,11 @@ export const stores: Store[] = [
     medicalCheckupTime: '周二、四、六',
     studentCount: 25,
     pricing: [
-      { type: 'C1两人一车特惠班', price: '¥3,280' },
-      { type: 'C2一人一车特惠班', price: '¥3,580' },
-      { type: 'VIP五次不过全额退班', price: '¥4,980' },
-      { type: 'D照', price: '¥299' },
-      { type: '全包 (含2圈模拟)', price: '¥899' }
+      { type: 'C1两人一车特惠班', price: '¥3,280  元' },
+      { type: 'C2一人一车特惠班', price: '¥3,580 元' },
+      { type: 'VIP五次不过全额退班', price: '¥4,980 元' },
+      { type: 'D照', price: '¥299 元' },
+      { type: '全包 (含2圈模拟)', price: '¥899  元' }
     ]
   },
   { id: 16, name: '懂车鹿学车·安技驾校官方基地店', address: '南芦公路158号1号门1栋101室', lnglat: [121.714705, 31.032416], status: 'open' },
@@ -98,7 +98,22 @@ export const stores: Store[] = [
   { id: 26, name: '光明三林训练场', address: '上南路4160号', lnglat: [121.507348, 31.145160], status: 'base' },
   { id: 27, name: '光明金桥训练场', address: '金明路75号', lnglat: [121.607211, 31.230411], status: 'base' },
   { id: 28, name: '光明基地', address: '周祝公路158号', lnglat: [121.599052, 31.098983], status: 'base' },
-  { id: 29, name: '锦隆基地', address: '富锦路2028号', lnglat: [121.422549, 31.396641], status: 'base' },
+  { 
+    id: 29, 
+    name: '锦隆基地', 
+    address: '富锦路2028号', 
+    lnglat: [121.422549, 31.396641], 
+    status: 'base',
+    medicalCheckupTime: '周一到周六',
+    studentCount: 55,
+    pricing: [
+      { type: 'C1两人一车特惠班', price: '¥3,280  元' },
+      { type: 'C2一人一车特惠班', price: '¥3,580 元' },
+      { type: 'VIP五次不过全额退班', price: '¥4,980 元' },
+      { type: 'D照', price: '¥299 元' },
+      { type: '全包 (含2圈模拟)', price: '¥899  元' }
+    ]
+  },
   { id: 30, name: '金山基地', address: '亭枫公路767号', lnglat: [121.304600, 30.888172], status: 'base' },
   { id: 31, name: '三林基地', address: '三林路91号', lnglat: [121.494535, 31.136374], status: 'base' },
   { id: 32, name: '星火基地', address: '随塘河路325号', lnglat: [121.606813, 30.853244], status: 'base' },
